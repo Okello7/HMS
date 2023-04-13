@@ -6,19 +6,19 @@ from django.contrib.auth.models import User
 class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     DoctorName =models.CharField(max_length=20)
-    emailAddress = models.EmailField(unique=True)
-    mobile = models.CharField (max_length=20 ,null=False) 
+    EmailAddress = models.EmailField(unique=True)
+    Mobile = models.CharField (max_length=20 ,null=False) 
     status=models.BooleanField(default=False)
 
 
 class Patient(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     PatientName = models.CharField(max_length=40)
-    address = models.CharField(max_length=40)
-    mobile = models.CharField(max_length=20,null=False)
-    symptoms = models.TextField(max_length=400,null=False)
-    assignedDoctorId = models.PositiveIntegerField(null=True)
-    admitDate=models.DateField(auto_now=True)
+    Address = models.CharField(max_length=40)
+    Mobile = models.CharField(max_length=20,null=False)
+    Symptoms = models.TextField(max_length=400,null=False)
+    AssignedDoctorId = models.PositiveIntegerField(null=True)
+    AdmitDate=models.DateField(auto_now=True)
     status=models.BooleanField(default=False)
     
 

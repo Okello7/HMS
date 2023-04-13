@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url("/static/img/R.jpeg");
+            background-repet: no-repeat;
+            background-size: cover;
+            
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    {% extends 'base.html'%}
+    {% comment %} {% extends 'base.html'%}
     {% block content%}
+    {{ texts }}
+    
     {% csrf_token %}
-     
-    {% endblock%}
+
+    {% endblock%} {% endcomment %}
+    <p>All in aall</p>
 </body>
 </html>

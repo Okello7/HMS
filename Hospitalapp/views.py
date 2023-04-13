@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
 # Create your views here.
+#Replaced all redirects to /home with https://www.example.com/
+# to find out the prob redirecting to hone
 
 def add_doctor(request):
     form = DoctorForm
@@ -23,21 +25,18 @@ def add_DischargeDetails(request):
     form = PatientDischargeDetails
     return render(request,'Discharge.html', {'form':form})
 
-
-
 def home(request):
-    if request.user.is_authenticated:
-        return render(request, 'home.html')
-    else:
-        return redirect('/home/signin')
-    
+    texts = "Here is my First Home"
+    return render(request,'home.html',{"trial":texts})
+
+
     
 
  
 def signup(request):
  
     if request.user.is_authenticated:
-        return redirect('/home')
+        return redirect('https://www.example.com/')
      
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -48,7 +47,7 @@ def signup(request):
             password = form.cleaned_data['password1']
             user = authenticate(username = username,password = password)
             login(request, user)
-            return redirect('')
+            return redirect('https://www.example.com/')
          
         else:
             return render(request,'signup.html',{'form':form})
@@ -59,7 +58,7 @@ def signup(request):
     
 def signin(request):
     if request.user.is_authenticated:
-        return redirect('/home')
+        return redirect('https://www.example.com/')
      
     if request.method == 'POST':
         username = request.POST['username']
@@ -68,7 +67,7 @@ def signin(request):
  
         if user is not None:
             login(request,user)
-            return redirect('/home')
+            return redirect('https://www.example.com/')
         else:
             form = AuthenticationForm()
             return render(request,'signin.html',{'form':form})
@@ -78,5 +77,14 @@ def signin(request):
         return render(request, 'signin.html', {'form':form})
  
 def signout(request):
-    logout(request)
-    return redirect('/home/signin/')
+    #logout(request)
+    return redirect('/home')
+
+# def home(request):
+#     if request.user.is_authenticated:
+#         return render(request, 'home.html')
+#     else:
+#         return redirect('/hospital/home')
+#     #form = PatientDischargeDetails
+#     #return render(request,'Discharge.html', {'form':form})
+    
