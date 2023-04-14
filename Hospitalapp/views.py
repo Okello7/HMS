@@ -27,7 +27,7 @@ def add_DischargeDetails(request):
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, 'home.html')
+        return render(request, 'home.html',{})
     else:
         return redirect('/home/signin')
     
@@ -48,7 +48,7 @@ def signup(request):
             password = form.cleaned_data['password1']
             user = authenticate(username = username,password = password)
             login(request, user)
-            return redirect('')
+            return redirect('/home')
          
         else:
             return render(request,'signup.html',{'form':form})

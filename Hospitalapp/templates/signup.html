@@ -1,11 +1,56 @@
+<style>
+    h1{
+        padding-top: 4%;
+        margin-bottom: 8%;
+        text-align: center;
+        font-family: "Fredoka One",cursive;
+        color: #01a2a8;
+        letter-spacing: 0.2cm;
+        height: 10hh;
+    }
+.login-container {
+    background-color: rgb(6, 243, 203);;
+    padding: 7%;
+    box-shadow: 0 4px 8px rgba(0,0, 0,0.2);
+    width: 30vw;
+    margin: auto;
+    height: 30vh;
+    margin-top: 12vh;
+
+}
+.btn{
+    background-color: rgb(155, 113, 35);
+    color: white;
+    border: none;
+    margin-top: 5%;
+}
+</style>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/medicine.png'%}">
+</head>
+
+
+
 <form method ='POST'>
     {% csrf_token %}
     <center>
-        {{form.as_p}}
+        <h1>Create an account</h1>
+ <div class="login-container">
+    {{form.as_p}}
+</div>
     <input type="submit" value = "Submit">
 </form>
  
 <h3>Already Have an Account??</h3>
-<a href = "{% url 'login' %}">Sign In Here</a>
+<a href = "{% url 'login' %}" class="btn">Sign In Here</a>
     </center>
 </form>  

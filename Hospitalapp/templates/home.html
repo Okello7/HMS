@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
+<style> 
+  h1{
+    text-align: center;
+    font-size: medium;
+    font-style: italic;
+  }
+</style>
+  {% include 'common/header.html'%}
+
+
+
 <body>
-    {% extends 'base.html'%}
-    {% block content%}
-    {% csrf_token %}
-     
-    {% endblock%}
+
+
+  <h1>HELLO WELCOME TO OUR HOSPITAL MANAGEMENT SYSTEM WEBSITE</h1>
+  <p>
+  Homepage contents will be here.
+  </p>
+
+  
 </body>
-</html>
+    
+    
+
+     
+</body>
+<footer>
+  {% include 'common/footer.html'%}
+</footer>
