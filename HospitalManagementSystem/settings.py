@@ -118,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS =[
-    'Hospitalapp/static'
+    'Hospitalapp/static',
 ]
 
 # Default primary key field type

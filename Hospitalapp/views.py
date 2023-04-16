@@ -26,10 +26,11 @@ def add_DischargeDetails(request):
     return render(request,'Discharge.html', {'form':form})
 
 def home(request):
-    texts = "Here is my First Home"
-    return render(request,'home.html',{"trial":texts})
-
-
+    if request.user.is_authenticated:
+        return render(request, 'home.html',{})
+    else:
+        return redirect('/home/signin')
+    
     
 
  
@@ -47,7 +48,7 @@ def signup(request):
             password = form.cleaned_data['password1']
             user = authenticate(username = username,password = password)
             login(request, user)
-            return redirect('https://www.example.com/')
+            return redirect('/home')
          
         else:
             return render(request,'signup.html',{'form':form})

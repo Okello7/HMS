@@ -19,7 +19,20 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Hospitalapp.urls')),
+<<<<<<< HEAD
     #path('home/signup/',include('Hospitalapp.urls')),
     #path('home/signin/',include('Hospitalapp.urls')),
     #path('home/signout/',include('Hospitalapp.urls')),
+=======
+    # path('doctor/',include('Hospitalapp.urls')),
+    # path('patient/',include('Hospitalapp.urls')),
+    # path('appointment/',include('Hospitalapp.urls')),
+    # path('discharge/',include('Hospitalapp.urls')),
+    path('home/signup/',include('Hospitalapp.urls')),
+    path('home/signin/',include('Hospitalapp.urls')),
+    path('home/signout/',include('Hospitalapp.urls')),
+>>>>>>> 6ce3077efc8dc6d4774a478fe0d0b74707f6b5d8
 ]
+
+
+

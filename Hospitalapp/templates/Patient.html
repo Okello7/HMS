@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            background-image: url("/static/img/patient.jpeg");
-            background-repet: no-repeat;
-            background-size: cover;
-            
-        }
-    </style>
-    <title>Document</title>
-</head>
-<body background-image: url("/static/img/patient.jpeg");>
-{% extends 'base.html'%}
+{% include 'common/header.html'%}
+
+<body>
 {%block content%}
         <center>
-        <h1>PatientForms</h1>
+        <h1>Patient Forms</h1>
         <br/><br/>
         <form action="" method="POST">
             {% csrf_token %}
+            
             {{ form.as_p }}
-<input type="submit" value="Submit" class = "btn btn-success"/>
+<input type="submit"  value="Submit" class = "btn btn-success"/>
 </form>
 </center>
 {% endblock %}
-<a href = "{% url 'logout' %}">Logout here</a>
 </body>
-</html>
+
+<footer>
+    {% include 'common/footer.html'%}
+  </footer>

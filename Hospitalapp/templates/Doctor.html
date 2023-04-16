@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management System</title>
-    
-</head>
+{% include 'common/header.html'%}
+
 <body>
-    {% extends 'base.html'%}
 {%block content%}
-        <center>
+
+<center>
+
         <h1>Doctor Forms</h1>
         <br/><br/>
-        <form action="" method="POST">
+<form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
 <input type="submit" value="Submit" class = "btn btn-success"/>
 </form>
 </center>
 {% endblock %}
- 
-<a href = "{% url 'logout' %}">Logout here</a>
 </body>
-</html>
+<footer>
+  {% include 'common/footer.html'%}
+</footer>
